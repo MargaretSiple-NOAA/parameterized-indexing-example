@@ -10,6 +10,9 @@ Should I try to change the figure tags? Try some other way of rendering the sect
 
 ## Version info: 
 
+R: 
+> R 4.2.1
+
 RStudio: 
 > RStudio 2022.07.1+554 "Spotted Wakerobin" Release
 (7872775ebddc40635780ca1ed238934c3345c5de, 2022-07-22) for Windows
