@@ -1,0 +1,12 @@
+---
+output:
+  officedown::rdocx_document:
+    pandoc_args: ["--metadata-file=header.yaml"]
+---
+
+This is a test of the cross-refs in this doc. Here is the first figure cross-reference (Figure \@ref(fig:test1)).
+
+
+```{r echo=FALSE, fig.cap='Figure caption for first figure.', fig.id='test1',  fig.cap.style = "Figure Caption"}
+plot(mtcars$mpg, mtcars$drat)
+```
