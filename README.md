@@ -3,7 +3,7 @@
 A toy example to demonstrate figure indexing when you want to include "chapters" from a template into a larger report document, and knit to Word. 
 
 ## The product
-A Word version of a report, with "results" chapters that loop through a set of parameters producing one section for each of those parameters. In my case, it will eventually be a list of 20-30 groundfish species. Here, for simplicity, it's cars w different numbers of cylinders. This is powerful because you don't have to do any post-processing to get all the report sections to work together. No hijinx in Word rejoice! :tada:
+A Word version of a report, with "results" chapters that loop through a set of parameters producing one section for each of those parameters. In my case, it will eventually be a list of 20-30 groundfish species. Here, for simplicity, it's cars w different numbers of cylinders. This is nice because you don't have to do any post-processing to get all the report sections to work together. No hijinx in Word... rejoice! :tada:
 
 
 ## Solution
