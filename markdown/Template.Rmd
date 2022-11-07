@@ -1,0 +1,19 @@
+
+
+# Parameterized report for cars with {{cylcode}} cylinders
+
+Here are some results that repeat for each of several species. Here I will cross-reference to the first figure in this "chapter" (Figure `r officer::run_reference(paste0("first-",{{cylcode}}))`). Here's a reference to the second figure in the chapter  (Figure `r officer::run_reference(paste0("second-",{{cylcode}}))`). The "parse" statement doesn't work with the cross-referencing tag. 
+
+```{r echo=FALSE,fig.cap='First figure in parameterized document -- the figure number is 1 the first time it shows up, and 2 the second time it shows up.', fig.id=paste0("first-",{{cylcode}}),  tab.cap.style = "Figure Caption"}
+p1 <- subset(x = mtcars,
+                    cyl=={{cylcode}})
+plot(p1$mpg,p1$wt,pch=2)
+```
+
+Here's some more text, followed by a second figure. For each parameterized report thing, there will be two graphs. 
+
+```{r echo=FALSE,fig.cap='Second figure in parameterized document -- the figure number is 2 the first time it shows up, and 4 the second time it shows up.', fig.id=paste0("second-",{{cylcode}}),  tab.cap.style = "Figure Caption"}
+p2 <- subset(x = mtcars,
+                    cyl=={{cylcode}})
+plot(p2$wt,p2$qsec,pch=19)
+```

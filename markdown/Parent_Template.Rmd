@@ -1,0 +1,35 @@
+---
+output:
+  officedown::rdocx_document:
+    pandoc_args: ["--metadata-file=header.yaml"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+## Attempted solution to the parameterized vs child doc thing
+
+This is a test of the cross-refs in this doc.
+
+
+```{r, echo=FALSE, results='asis'}
+cyl.vec <- c(4,6)
+src <- list()
+
+for(i in 1:length(cyl.vec)){
+  cylcode <- cyl.vec[i]
+  src[[i]] <- knitr::knit_expand(here::here('markdown','Template.Rmd'))
+}
+
+# src <- lapply(cyl.vec, function(cylcode){
+#   knitr::knit_expand(here::here('markdown','Template.Rmd'))
+# })
+
+res = knitr::knit_child(text = unlist(src), quiet = TRUE)
+cat(res, sep = '\n')
+```
