@@ -2,7 +2,7 @@
 
 # Parameterized report for cars with {{cylcode}} cylinders
 
-Here are some results that repeat for each of several species. Here I will cross-reference to the first figure in this "chapter" (Figure `r officer::run_reference(paste0("first-",{{cylcode}}))`). Here's a reference to the second figure in the chapter  (Figure `r officer::run_reference(paste0("second-",{{cylcode}}))`). The "parse" statement doesn't work with the cross-referencing tag. 
+Here are some results that repeat for each of several species. Here I will cross-reference to the first figure in this "chapter" (Figure `r officer::run_reference(paste0("first-",{{cylcode}}))`). Here's a reference to the second figure in the chapter  (Figure `r officer::run_reference(paste0("second-",{{cylcode}}))`). The "parse" statement doesn't work with the cross-referencing tag. And here I will add a cross-reference for a table just to make sure this whole shenanigans is working (Table `r officer::run_reference(paste0("table1-",{{cylcode}}))`.
 
 ```{r echo=FALSE,fig.cap='First figure in parameterized document -- the figure number is 1 the first time it shows up, and 2 the second time it shows up.', fig.id=paste0("first-",{{cylcode}}),  tab.cap.style = "Figure Caption"}
 p1 <- subset(x = mtcars,
@@ -17,3 +17,10 @@ p2 <- subset(x = mtcars,
                     cyl=={{cylcode}})
 plot(p2$wt,p2$qsec,pch=19)
 ```
+
+```{r echo=FALSE,tab.cap='Test table to make sure I can do both in the same doc', tab.id=paste0("table1-",{{cylcode}}),  tab.cap.style = "Table Caption"}
+p2 <- subset(x = mtcars,
+                    cyl=={{cylcode}})
+flextable::flextable(p2)
+```
+
