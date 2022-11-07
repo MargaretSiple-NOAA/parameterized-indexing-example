@@ -1,12 +1,18 @@
 # parameterized-indexing-example
 
-A toy example to figure out figure indexing when you have parameterized reports as chapters. the main issue is this: when I render one chapter each for a small set of variables (in this case, the number of cylinders in a car), and combine them into one report document, the indexing works for the figures but not for the in-text cross-references of those figures.
+A toy example to demonstrate figure indexing when you want to include "chapters" from a template into a larger report document, and knit to Word. 
 
-If you run the `run.R` script, you'll end up with three .docx files. I want to be able to insert the two ParameterizedChapter.docx files at the bottom of IntroSections.docx. If you insert those two chapters into IntroSections.docx, and update all the fields, you'll see that the figure numbers march along as they should, but the in-text references continue to repeat. I think this is because the hyperlinks are based on the fig tags in the parameterized chapter.
+## The product
+A Word version of a report, with "results" chapters that loop through a set of parameters producing one section for each of those parameters. In my case, it will eventually be a list of 20-30 groundfish species. Here, for simplicity, it's cars w different numbers of cylinders. This is powerful because you don't have to do any post-processing to get all the report sections to work together. No hijinx in Word rejoice! :tada:
 
-I am aware that .docx is a little bit funky when it comes to output but I have to produce it in this format for... reasons.
 
-Should I try to change the figure tags? Try some other way of rendering the sections besides using parameterized reports? I think parameterization is what I want to use because I will eventually have about 30 variables to loop through, and each chapter will be fairly complex (text, tables, and figures in each chapter).
+## Solution
+I use `knitr::knit_expand()` and `officer::run_reference()` to label figures and tables separately and index them properly in the final Word document. Yay! 
+
+
+## Original issue
+The main issue *was* this: the only way I knew how to create chapters iteratively was to use a `for()` loop with `rmarkdown::render()`, producing chapters. But then when I put them all together, the indexing in the final word doc didn't work because when you create a parameterized report, the figure tags are the same for each. So the Figures would be correctly labeled, but the in-text references would only refer to the first two figures in the larger report.
+
 
 ## Version info: 
 
