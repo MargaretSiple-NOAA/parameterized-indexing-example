@@ -26,6 +26,7 @@ for(i in 1:length(cyl.vec)){
   src[[i]] <- knitr::knit_expand(here::here('markdown','Template.Rmd'))
 }
 
+# You can also do it using lapply (I wanted the for loop though because I'm setting a bunch of params)
 # src <- lapply(cyl.vec, function(cylcode){
 #   knitr::knit_expand(here::here('markdown','Template.Rmd'))
 # })
