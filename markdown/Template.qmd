@@ -1,0 +1,32 @@
+
+
+# Parameterized report for cars with {{cylcode}} cylinders
+
+Here are some results that repeat for each of several species. Here I will cross-reference to the first figure in this "chapter" (@fig-first-{{cylcode}}). Here's a reference to the second figure in the chapter  (@fig-second-{{cylcode}}). The "parse" statement doesn't work with the cross-referencing tag. And here I will add a cross-reference for a table just to make sure this whole shenanigans is working (@tbl-{{cylcode}}).
+
+```{r echo=FALSE}
+#| label: fig-first-{{cylcode}}
+#| fig-cap: 'First figure in parameterized document -- the figure number is 1 the first time it shows up, and 2 the second time it shows up.'
+p1 <- subset(x = mtcars, cyl=={{cylcode}})
+plot(p1$mpg,p1$wt,pch=2)
+```
+
+Here's some more text, followed by a second figure. For each parameterized report thing, there will be two graphs. 
+
+```{r echo=FALSE}
+#| label: fig-second-{{cylcode}}
+#| fig-cap: 'Second figure in parameterized document -- the figure number is 2 the first time it shows up, and 4 the second time it shows up.'
+p2 <- subset(x = mtcars,
+                    cyl=={{cylcode}})
+plot(p2$wt,p2$qsec,pch=19)
+```
+
+
+```{r echo=FALSE}
+#| label: tbl-{{cylcode}}
+#| tbl-cap: 'Test table to make sure I can do both in the same doc'
+p2 <- subset(x = mtcars, cyl=={{cylcode}})
+gt::gt(p2)
+```
+
+
