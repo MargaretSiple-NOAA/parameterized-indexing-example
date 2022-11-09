@@ -5,8 +5,14 @@ A toy example to demonstrate figure indexing when you want to include "chapters"
 ## The product
 A Word version of a report, with "results" chapters that loop through a set of parameters producing one section for each of those parameters. In my case, it will eventually be a list of 20-30 groundfish species. Here, for simplicity, it's cars w different numbers of cylinders. This is nice because you don't have to do any post-processing to get all the report sections to work together. No hijinx in Word... rejoice! :tada:
 
+## Quarto solution
+Eli Holmes (@eeholmes) has developed a solution for this in quarto that is even cleaner and more awesome, and I recommend it if you're starting out on your report-building journey. Look at the files [`Template.qmd`](https://github.com/MargaretSiple-NOAA/parameterized-indexing-example/blob/main/markdown/Template.qmd) and [`Parent_Template.qmd`](https://github.com/MargaretSiple-NOAA/parameterized-indexing-example/blob/main/markdown/Parent_Template.qmd). The benefits of the new approach:
 
-## Solution
+1. Figure and table cross-references are much cleaner in the .qmd file
+2. Clean chunk notation for Quarto minimizes headaches
+3. You can interchangeably knit .docx and .html files, whereas using the "Markdown-only solution" below limits you to .docx.
+
+## Markdown-only solution
 I use `knitr::knit_expand()` and `officer::run_reference()` to label figures and tables separately and index them properly in the final Word document. Yay! 
 
 
