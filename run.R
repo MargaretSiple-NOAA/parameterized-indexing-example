@@ -18,3 +18,8 @@ for (i in 1:length(cyl.vec)){
                       "cylinders.docx")
                     )
 }
+
+
+# rmarkdown::render("markdown/Parent_Template.Rmd",
+#                   output_file = "Parent_Template.docx"
+# )
