@@ -1,0 +1,7 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+.Random.seed|object|95c39ed8277128d6|||||||||||||||
+create_markdown_template|function|59233b7b5f23117b|||||||||||||||
+cyl_vec|stem|34c190bee85651d0|6b0e5ec84c64ae1b|a3dad144c40657ed|-876404362||t19332.1103631895s|7e02ad38317bcde4|55|rds|local|vector|||0.001||
+document_thingy|stem|106330a8c4055b8f|bf8289a71904ffb7|7489a6646c251bd3|-1678758282|markdown/Parent_Template.docx*Parent_Template_files*markdown/Parent_Template.qmd|t19332.1188210433s||293184|file|local|vector|||6.022||33m39m System command quarto failed
+markdown_file_path|stem|d77da13479d68e1c|0519fad529dac895|c3b5fc02cdc369c1|1653333968|/Users/nick/github/njtierney/parameterized-indexing-example/markdown/Template.qmd|t19332.1011163954s|b23a7fe33b4b2a93|1334|file|local|vector|||0.007||
+src|stem|ab950261354694ef|f82d3fe987b2d6dc|fe1916a9f6031600|-1448626477||t19332.1172153672s|f612904d7df9af26|655|rds|local|vector|||0.01||
