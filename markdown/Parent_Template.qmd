@@ -7,7 +7,7 @@ format: docx
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Attempted solution to the parameterized vs child doc thing
+## Quarto solution to using templates/parameterization in a report
 
 This is a test of the cross-refs in this doc.
 
