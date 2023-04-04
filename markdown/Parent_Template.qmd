@@ -1,16 +1,14 @@
 ---
-title: "Untitled"
-format: docx
+title: "A report with parameterized sections"
+format: html
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+data("mtcars")
 ```
 
-## Quarto solution to using templates/parameterization in a report
-
-This is a test of the cross-refs in this doc.
-
+## Quarto solution
 
 ```{r include=FALSE}
 cyl.vec <- c(4,6)

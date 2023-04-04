@@ -1,6 +1,6 @@
 
 
-# Parameterized report for cars with {{cylcode}} cylinders
+# Report section: cars with {{cylcode}} cylinders
 
 Here are some results that repeat for each of several species. Here I will cross-reference to the first figure in this "chapter" (@fig-first-{{cylcode}}). Here's a reference to the second figure in the chapter  (@fig-second-{{cylcode}}). The "parse" statement doesn't work with the cross-referencing tag. And here I will add a cross-reference for a table just to make sure this whole shenanigans is working (@tbl-{{cylcode}}).
 
@@ -21,6 +21,7 @@ p2 <- subset(x = mtcars,
 plot(p2$wt,p2$qsec,pch=19)
 ```
 
+And here is a table with a caption; there should be one for each section (in this example, one for each cylinder):
 
 ```{r echo=FALSE}
 #| label: tbl-{{cylcode}}
