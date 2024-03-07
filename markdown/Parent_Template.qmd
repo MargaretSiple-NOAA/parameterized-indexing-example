@@ -11,11 +11,7 @@ data("mtcars")
 ## Quarto solution
 
 ```{r include=FALSE}
-cyl.vec <- c(4,6)
-src <- list()
-for(i in 1:length(cyl.vec)){
-  cylcode <- cyl.vec[i]
-  src[[i]] <- knitr::knit_expand(here::here('markdown','Template.qmd'))
-}
+targets::tar_load(src)
 ```
+
 `r paste(knitr::knit(text = unlist(src)), collapse = '\n')`
